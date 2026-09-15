@@ -1,44 +1,24 @@
 ﻿using System;
 
-class Student
+class Person
 {
-    int rollNo;
-    string name;
-    int mark1, mark2, mark3;
-    int total;
-    double average;
+    public string Name = "Bob";
+    public int Age = 20;
 
-    public void GetData()
+    public void DisplayPerson()
     {
-        Console.Write("Enter Roll Number: ");
-        rollNo = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Enter Student Name: ");
-        name = Console.ReadLine();
-
-        Console.Write("Enter Mark 1: ");
-        mark1 = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Enter Mark 2: ");
-        mark2 = Convert.ToInt32(Console.ReadLine());
-
-        Console.Write("Enter Mark 3: ");
-        mark3 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Name : " + Name);
+        Console.WriteLine("Age : " + Age);
     }
+}
 
-    public void Calculate()
-    {
-        total = mark1 + mark2 + mark3;
-        average = total / 3.0;
-    }
+class Student : Person
+{
+    public int RollNo = 101;
 
-    public void Display()
+    public void DisplayStudent()
     {
-        Console.WriteLine("\n----- Student Details -----");
-        Console.WriteLine("Roll Number : " + rollNo);
-        Console.WriteLine("Name        : " + name);
-        Console.WriteLine("Total Marks : " + total);
-        Console.WriteLine("Average     : " + average);
+        Console.WriteLine("Roll No : " + RollNo);
     }
 }
 
@@ -48,9 +28,8 @@ class Program
     {
         Student s = new Student();
 
-        s.GetData();
-        s.Calculate();
-        s.Display();
+        s.DisplayPerson();
+        s.DisplayStudent();
 
         Console.ReadLine();
     }
